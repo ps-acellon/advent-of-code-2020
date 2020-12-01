@@ -15,8 +15,8 @@ mod day01 {
         for expense in expenses.iter() {
             let summand = SUM - expense;
             if expenses.contains(&summand) {
-                println!("Day 1, part 1 - {}", expense * summand);
-                return
+                println!("Day 1, part 1: {}", expense * summand);
+                return;
             }
         }
     }
@@ -27,13 +27,16 @@ mod day01 {
             .map(|line| line.parse::<i32>().unwrap())
             .collect();
         expenses.sort();
-        for (idx, expense) in expenses.iter().enumerate() {
-            for front_offset in (idx + 1)..expenses.len() {
-                for offset in (idx + 1)..expenses.len() {
-                    let front_summand = expenses[front_offset];
-                    let summand = expenses[expenses.len() - offset];
-                    if expense + front_summand + summand == 2020 {
-                        println!("Day 1, part 1 - {}", expense * front_summand * summand);
+        for (first_idx, first_entry) in expenses.iter().enumerate() {
+            for second_idx in (first_idx + 1)..expenses.len() {
+                for third_idx in (first_idx + 2)..expenses.len() {
+                    let second_entry = expenses[second_idx];
+                    let third_entry = expenses[expenses.len() - third_idx];
+                    if first_entry + second_entry + third_entry == SUM {
+                        println!(
+                            "Day 1, part 2: {}",
+                            first_entry * second_entry * third_entry
+                        );
                         return;
                     }
                 }
