@@ -11,14 +11,8 @@ pub fn part1() {
             let cap = re.captures(&line).unwrap();
             let min: usize = cap[1].parse().unwrap();
             let max: usize = cap[2].parse().unwrap();
-            let c = &cap[3];
-            let pw = &cap[4];
-            let matches = pw.matches(c).collect::<Vec<&str>>().len();
-            if min <= matches && matches <= max {
-                1
-            } else {
-                0
-            }
+            let matches: Vec<_> = (&cap[4]).matches(&cap[3]).collect();
+            (min <= matches.len() && matches.len() <= max) as u32
         })
         .sum();
     println!("| Day 02 | Part 1 || {} \t |", &good_password_count);
@@ -33,14 +27,8 @@ pub fn part2() {
             let first_idx = cap[1].parse::<usize>().unwrap() - 1;
             let second_idx = cap[2].parse::<usize>().unwrap() - 1;
             let c = &cap[3];
-            let pw = &cap[4];
-            let matches: Vec<_> = pw.match_indices(c).collect();
-
-            if matches.contains(&(first_idx, c)) ^ matches.contains(&(second_idx, c)) {
-                1
-            } else {
-                0
-            }
+            let matches: Vec<_> = (&cap[4]).match_indices(c).collect();            
+            (matches.contains(&(first_idx, c)) ^ matches.contains(&(second_idx, c))) as u32
         })
         .sum();
     println!("| Day 02 | Part 2 || {} \t |", &good_password_count);
