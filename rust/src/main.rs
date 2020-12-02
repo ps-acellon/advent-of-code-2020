@@ -1,8 +1,16 @@
 pub mod day01;
+pub mod day02;
 
 fn main() {
+    println!("----------------------------------");
+    println!("| Day    | Part   || Answer \t |");
+    println!("|================================|");
     day01::part1();
     day01::part2();
+    println!("|--------------------------------|");
+    day02::part1();
+    day02::part2();
+    println!("----------------------------------");
 }
 
 mod aoc {

@@ -9,8 +9,8 @@ pub fn part1() {
     for expense in expenses.iter() {
         let summand = SUM - expense;
         if expenses.contains(&summand) {
-            println!("Day 1, part 1: {}", expense * summand);
-            return;
+            println!("| Day 01 | Part 1 || {} \t |", expense * summand);
+            return
         }
     }
 }
@@ -28,10 +28,10 @@ pub fn part2() {
                 let third_entry = expenses[expenses.len() - third_idx];
                 if first_entry + second_entry + third_entry == SUM {
                     println!(
-                        "Day 1, part 2: {}",
+                        "| Day 01 | Part 2 || {} \t |",
                         first_entry * second_entry * third_entry
                     );
-                    return;
+                    return
                 }
             }
         }
