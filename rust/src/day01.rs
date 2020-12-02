@@ -10,7 +10,7 @@ pub fn part1() {
         let summand = SUM - expense;
         if expenses.contains(&summand) {
             println!("| Day 01 | Part 1 || {} \t |", expense * summand);
-            return
+            return;
         }
     }
 }
@@ -31,7 +31,7 @@ pub fn part2() {
                         "| Day 01 | Part 2 || {} \t |",
                         first_entry * second_entry * third_entry
                     );
-                    return
+                    return;
                 }
             }
         }

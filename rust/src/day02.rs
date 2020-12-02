@@ -1,8 +1,10 @@
 use crate::aoc::read_lines;
 use regex::Regex;
 
+const REGEX_PATTERN: &str = r"^(\d+)-(\d+) ([a-z]{1}): ([a-z]+)$";
+
 pub fn part1() {
-    let re = Regex::new(r"^(\d+)-(\d+) ([a-z]{1}): ([a-z]+)$").unwrap();
+    let re = Regex::new(REGEX_PATTERN).unwrap();
     let good_password_count: u32 = read_lines("src/input-day02.txt")
         .into_iter()
         .map(|line| {
@@ -23,7 +25,7 @@ pub fn part1() {
 }
 
 pub fn part2() {
-    let re = Regex::new(r"^(\d+)-(\d+) ([a-z]{1}): ([a-z]+)$").unwrap();
+    let re = Regex::new(REGEX_PATTERN).unwrap();
     let good_password_count: u32 = read_lines("src/input-day02.txt")
         .into_iter()
         .map(|line| {
