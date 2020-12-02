@@ -17,6 +17,7 @@ mod aoc {
     use std::fs::File;
     use std::io::{self, BufRead};
     use std::path::Path;
+    use std::fmt::Debug;
 
     pub fn read_lines<P>(filename: P) -> Vec<String>
     where
@@ -27,5 +28,14 @@ mod aoc {
             .lines()
             .map(|line| line.unwrap())
             .collect()
+    }
+
+    pub fn print_response<T: Debug>(day: u32, part: u32, response: T) {
+        println!(
+            "| Day {day:0>2} | Part {part} || {response:#?} \t |",
+            day=day,
+            part=part,
+            response=response
+        );
     }
 }

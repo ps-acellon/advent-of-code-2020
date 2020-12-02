@@ -1,22 +1,22 @@
-use crate::aoc::read_lines;
+use crate::aoc;
 const SUM: i32 = 2020;
 
 pub fn part1() {
-    let expenses: Vec<i32> = read_lines("src/input-day01.txt")
+    let expenses: Vec<i32> = aoc::read_lines("src/input-day01.txt")
         .into_iter()
         .map(|line| line.parse::<i32>().unwrap())
         .collect();
     for expense in expenses.iter() {
         let summand = SUM - expense;
         if expenses.contains(&summand) {
-            println!("| Day 01 | Part 1 || {} \t |", expense * summand);
+            aoc::print_response(1, 1, expense * summand);
             return;
         }
     }
 }
 
 pub fn part2() {
-    let mut expenses: Vec<i32> = read_lines("src/input-day01.txt")
+    let mut expenses: Vec<i32> = aoc::read_lines("src/input-day01.txt")
         .into_iter()
         .map(|line| line.parse::<i32>().unwrap())
         .collect();
@@ -27,10 +27,7 @@ pub fn part2() {
                 let second_entry = expenses[second_idx];
                 let third_entry = expenses[expenses.len() - third_idx];
                 if first_entry + second_entry + third_entry == SUM {
-                    println!(
-                        "| Day 01 | Part 2 || {} \t |",
-                        first_entry * second_entry * third_entry
-                    );
+                    aoc::print_response(1, 2, first_entry * second_entry * third_entry);
                     return;
                 }
             }
