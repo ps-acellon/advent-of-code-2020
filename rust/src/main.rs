@@ -1,5 +1,6 @@
 pub mod day01;
 pub mod day02;
+pub mod day03;
 
 fn main() {
     println!("----------------------------------");
@@ -10,14 +11,17 @@ fn main() {
     println!("|--------------------------------|");
     day02::part1();
     day02::part2();
+    println!("|--------------------------------|");
+    day03::part1();
+    day03::part2();
     println!("----------------------------------");
 }
 
 mod aoc {
+    use std::fmt::Debug;
     use std::fs::File;
     use std::io::{self, BufRead};
     use std::path::Path;
-    use std::fmt::Debug;
 
     pub fn read_lines<P>(filename: P) -> Vec<String>
     where
@@ -33,9 +37,9 @@ mod aoc {
     pub fn print_response<T: Debug>(day: u32, part: u32, response: T) {
         println!(
             "| Day {day:0>2} | Part {part} || {response:#?} \t |",
-            day=day,
-            part=part,
-            response=response
+            day = day,
+            part = part,
+            response = response
         );
     }
 }

@@ -27,7 +27,7 @@ pub fn part2() {
             let first_idx = cap[1].parse::<usize>().unwrap() - 1;
             let second_idx = cap[2].parse::<usize>().unwrap() - 1;
             let c = &cap[3];
-            let matches: Vec<_> = (&cap[4]).match_indices(c).collect();            
+            let matches: Vec<_> = (&cap[4]).match_indices(c).collect();
             (matches.contains(&(first_idx, c)) ^ matches.contains(&(second_idx, c))) as u32
         })
         .sum();
