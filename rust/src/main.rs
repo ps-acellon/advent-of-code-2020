@@ -1,6 +1,10 @@
+#[macro_use]
+extern crate lazy_static;
+
 pub mod day01;
 pub mod day02;
 pub mod day03;
+pub mod day04;
 
 fn main() {
     println!("----------------------------------");
@@ -14,6 +18,9 @@ fn main() {
     println!("|--------------------------------|");
     day03::part1();
     day03::part2();
+    println!("|--------------------------------|");
+    day04::part1();
+    day04::part2();
     println!("----------------------------------");
 }
 
