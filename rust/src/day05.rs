@@ -32,14 +32,20 @@ pub fn part2() {
 }
 
 fn bsp_to_seat_id(lines: Vec<String>) -> Vec<usize> {
-    lines.into_iter().map(|line| {
-        let binary_string: String = line.chars().map(|c| match c {
-            'F' => '0',
-            'B' => '1',
-            'L' => '0',
-            'R' => '1',
-            _ => panic!("unexpected char")
-        }).collect();
-        usize::from_str_radix(&binary_string, 2).unwrap()
-    }).collect()
+    lines
+        .into_iter()
+        .map(|line| {
+            let binary_string: String = line
+                .chars()
+                .map(|c| match c {
+                    'F' => '0',
+                    'B' => '1',
+                    'L' => '0',
+                    'R' => '1',
+                    _ => panic!("unexpected char"),
+                })
+                .collect();
+            usize::from_str_radix(&binary_string, 2).unwrap()
+        })
+        .collect()
 }
