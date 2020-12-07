@@ -2,7 +2,7 @@ use crate::aoc;
 const SUM: i32 = 2020;
 
 pub fn part1() {
-    let expenses: Vec<i32> = aoc::read_lines("src/input-day01.txt")
+    let expenses: Vec<i32> = aoc::read_lines("src/day01.txt")
         .into_iter()
         .map(|line| line.parse::<i32>().unwrap())
         .collect();
@@ -16,7 +16,7 @@ pub fn part1() {
 }
 
 pub fn part2() {
-    let mut expenses: Vec<i32> = aoc::read_lines("src/input-day01.txt")
+    let mut expenses: Vec<i32> = aoc::read_lines("src/day01.txt")
         .into_iter()
         .map(|line| line.parse::<i32>().unwrap())
         .collect();

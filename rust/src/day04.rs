@@ -5,7 +5,7 @@ use std::io::prelude::*;
 
 pub fn part1() {
     let mut batch = String::new();
-    let mut file = File::open("src/input-day04.txt").unwrap();
+    let mut file = File::open("src/day04.txt").unwrap();
     file.read_to_string(&mut batch).unwrap();
 
     let key_value_re = Regex::new(r"(byr|iyr|eyr|hgt|hcl|ecl|pid):(\S+)").unwrap();
@@ -18,7 +18,7 @@ pub fn part1() {
 
 pub fn part2() {
     let mut batch = String::new();
-    let mut file = File::open("src/input-day04.txt").unwrap();
+    let mut file = File::open("src/day04.txt").unwrap();
     file.read_to_string(&mut batch).unwrap();
 
     let key_value_re = Regex::new(r"(byr|iyr|eyr|hgt|hcl|ecl|pid):(\S+)").unwrap();

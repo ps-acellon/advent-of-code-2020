@@ -1,7 +1,7 @@
 use crate::aoc;
 
 pub fn part1() {
-    let lines = aoc::read_lines("src/input-day05.txt");
+    let lines = aoc::read_lines("src/day05.txt");
     let max_id = bsp_to_seat_id(lines).into_iter().max().unwrap();
     aoc::print_response(5, 1, &max_id);
 }
@@ -20,7 +20,7 @@ pub fn part1() {
 
 // O(x) potentially - but also maybe O(xlogx)
 pub fn part2() {
-    let lines = aoc::read_lines("src/input-day05.txt");
+    let lines = aoc::read_lines("src/day05.txt");
     let seat_ids = bsp_to_seat_id(lines);
     let min = seat_ids.iter().min().unwrap();
     let max = seat_ids.iter().max().unwrap();

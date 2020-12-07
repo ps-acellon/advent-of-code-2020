@@ -4,7 +4,7 @@ const TREE: char = '#';
 
 pub fn part1() {
     let slope = (3, 1);
-    let lines = aoc::read_lines("src/input-day03.txt");
+    let lines = aoc::read_lines("src/day03.txt");
     let length = lines.first().unwrap().len();
 
     let collisions: u32 = count_collisions(&lines, &length, slope.0, slope.1);
@@ -13,7 +13,7 @@ pub fn part1() {
 
 pub fn part2() {
     let slopes = vec![(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
-    let lines = aoc::read_lines("src/input-day03.txt");
+    let lines = aoc::read_lines("src/day03.txt");
     let length = lines.first().unwrap().len();
     let collisions: u32 = slopes
         .into_iter()

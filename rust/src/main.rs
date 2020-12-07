@@ -7,6 +7,7 @@ pub mod day03;
 pub mod day04;
 pub mod day05;
 pub mod day06;
+pub mod day07;
 
 fn main() {
     println!("----------------------------------");
@@ -29,6 +30,9 @@ fn main() {
     println!("|--------------------------------|");
     day06::part1();
     day06::part2();
+    println!("|--------------------------------|");
+    day07::part1();
+    day07::part2();
     println!("----------------------------------");
 }
 

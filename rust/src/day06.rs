@@ -35,7 +35,7 @@ pub fn part2() {
 
 fn get_input() -> String {
     let mut text = String::new();
-    let mut file = File::open("src/input-day06.txt").unwrap();
+    let mut file = File::open("src/day06.txt").unwrap();
     file.read_to_string(&mut text).unwrap();
     text
 }
