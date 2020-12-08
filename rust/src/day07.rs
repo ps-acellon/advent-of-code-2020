@@ -5,22 +5,22 @@ use std::collections::{HashMap, HashSet};
 #[derive(Debug)]
 struct ContainedBag {
     number: usize,
-    color: String
+    color: String,
 }
 
 #[derive(Debug)]
 struct Bag {
     color: String,
     parents: Vec<String>,
-    children: Vec<ContainedBag>
+    children: Vec<ContainedBag>,
 }
 
 impl Bag {
-    fn new(color: &str)  -> Self {
+    fn new(color: &str) -> Self {
         Self {
             color: String::from(color),
             parents: vec![],
-            children: vec![]
+            children: vec![],
         }
     }
 }
@@ -45,12 +45,19 @@ fn build_map(rules: Vec<String>) -> HashMap<String, Bag> {
         for inner_cap in INNER.captures_iter(&outer_cap[2]) {
             {
                 let inner_bag_color = String::from(&inner_cap[2]);
-                let inner_bag = bag_collection.entry(inner_bag_color).or_insert(Bag::new(&inner_cap[2]));
+                let inner_bag = bag_collection
+                    .entry(inner_bag_color)
+                    .or_insert(Bag::new(&inner_cap[2]));
                 inner_bag.parents.push(String::from(outer_bag_color));
             }
             {
-                let outer_bag = bag_collection.entry(String::from(outer_bag_color)).or_insert(Bag::new(outer_bag_color));
-                outer_bag.children.push(ContainedBag{color: String::from(&inner_cap[2]), number: inner_cap[1].parse::<usize>().unwrap()});
+                let outer_bag = bag_collection
+                    .entry(String::from(outer_bag_color))
+                    .or_insert(Bag::new(outer_bag_color));
+                outer_bag.children.push(ContainedBag {
+                    color: String::from(&inner_cap[2]),
+                    number: inner_cap[1].parse::<usize>().unwrap(),
+                });
             }
         }
     }
