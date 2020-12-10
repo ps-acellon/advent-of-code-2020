@@ -1,5 +1,6 @@
 #[macro_use]
 extern crate lazy_static;
+use std::env;
 
 pub mod day01;
 pub mod day02;
@@ -9,34 +10,51 @@ pub mod day05;
 pub mod day06;
 pub mod day07;
 pub mod day08;
+pub mod day09;
 
 fn main() {
-    // day08::part1();
-    day08::part2();
-    // println!("----------------------------------");
-    // println!("| Day    | Part   || Answer \t |");
-    // println!("|================================|");
-    // day01::part1();
-    // day01::part2();
-    // println!("|--------------------------------|");
-    // day02::part1();
-    // day02::part2();
-    // println!("|--------------------------------|");
-    // day03::part1();
-    // day03::part2();
-    // println!("|--------------------------------|");
-    // day04::part1();
-    // day04::part2();
-    // println!("|--------------------------------|");
-    // day05::part1();
-    // day05::part2();
-    // println!("|--------------------------------|");
-    // day06::part1();
-    // day06::part2();
-    // println!("|--------------------------------|");
-    // day07::part1();
-    // day07::part2();
-    // println!("----------------------------------");
+    let args: Vec<String> = env::args().collect();
+    println!("----------------------------------");
+    println!("| Day    | Part   || Answer \t |");
+    println!("|================================|");
+
+    if args.len() == 1 {
+        day01::all();
+        println!("|--------------------------------|");
+        day02::all();
+        println!("|--------------------------------|");
+        day03::all();
+        println!("|--------------------------------|");
+        day04::all();
+        println!("|--------------------------------|");
+        day05::all();
+        println!("|--------------------------------|");
+        day06::all();
+        println!("|--------------------------------|");
+        day07::all();
+        println!("|--------------------------------|");
+        day08::all();
+        println!("|--------------------------------|");
+        day09::all();
+    } else {
+        match &args[1]
+            .parse::<usize>()
+            .expect("Command line arguments must be int between 1 and 25")
+        {
+            1 => day01::all(),
+            2 => day02::all(),
+            3 => day03::all(),
+            4 => day04::all(),
+            5 => day05::all(),
+            6 => day06::all(),
+            7 => day07::all(),
+            8 => day08::all(),
+            9 => day09::all(),
+            10..=25 => aoc::print_response(0, 0, "hold ur horses!!"),
+            _ => panic!("Command line arg must be int between 1 and 25"),
+        };
+    }
+    println!("----------------------------------");
 }
 
 mod aoc {

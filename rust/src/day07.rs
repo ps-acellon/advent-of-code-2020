@@ -25,6 +25,11 @@ impl Bag {
     }
 }
 
+pub fn all() {
+    part1();
+    part2();
+}
+
 pub fn part1() {
     let rules = aoc::read_lines("src/day07.txt");
     let bag_collection = build_map(rules);

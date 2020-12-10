@@ -3,6 +3,11 @@ use std::collections::HashSet;
 use std::fs::File;
 use std::io::prelude::*;
 
+pub fn all() {
+    part1();
+    part2();
+}
+
 pub fn part1() {
     let input = get_input();
     let count: usize = input

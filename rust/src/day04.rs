@@ -3,6 +3,11 @@ use regex::Regex;
 use std::fs::File;
 use std::io::prelude::*;
 
+pub fn all() {
+    part1();
+    part2();
+}
+
 pub fn part1() {
     let mut batch = String::new();
     let mut file = File::open("src/day04.txt").unwrap();

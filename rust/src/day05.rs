@@ -1,5 +1,10 @@
 use crate::aoc;
 
+pub fn all() {
+    part1();
+    part2();
+}
+
 pub fn part1() {
     let lines = aoc::read_lines("src/day05.txt");
     let max_id = bsp_to_seat_id(lines).into_iter().max().unwrap();

@@ -71,6 +71,11 @@ fn run_program(instructions: &HashMap<usize, Instruction>) -> (usize, isize) {
     (instruction_pointer, accumulator)
 }
 
+pub fn all() {
+    part1();
+    part2();
+}
+
 pub fn part1() {
     let lines = aoc::read_lines("src/day08.txt");
     let mut instructions = HashMap::new();

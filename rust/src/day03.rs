@@ -2,6 +2,11 @@ use crate::aoc;
 
 const TREE: char = '#';
 
+pub fn all() {
+    part1();
+    part2();
+}
+
 pub fn part1() {
     let slope = (3, 1);
     let lines = aoc::read_lines("src/day03.txt");

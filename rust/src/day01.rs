@@ -1,6 +1,11 @@
 use crate::aoc;
 const SUM: i32 = 2020;
 
+pub fn all() {
+    part1();
+    part2();
+}
+
 pub fn part1() {
     let expenses: Vec<i32> = aoc::read_lines("src/day01.txt")
         .into_iter()

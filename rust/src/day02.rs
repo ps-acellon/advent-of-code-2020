@@ -3,6 +3,11 @@ use regex::Regex;
 
 const REGEX_PATTERN: &str = r"^(\d+)-(\d+) ([a-z]{1}): ([a-z]+)$";
 
+pub fn all() {
+    part1();
+    part2();
+}
+
 pub fn part1() {
     let re = Regex::new(REGEX_PATTERN).unwrap();
     let good_password_count: u32 = aoc::read_lines("src/day02.txt")
