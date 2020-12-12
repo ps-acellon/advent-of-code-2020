@@ -7,7 +7,7 @@ pub fn all() {
 }
 
 pub fn part1() {
-    let mut joltages: Vec<_> = aoc::read_lines("src/day10-test.txt")
+    let mut joltages: Vec<_> = aoc::read_lines("src/day10.txt")
         .iter()
         .map(|line| line.parse::<usize>().unwrap())
         .collect();

@@ -12,6 +12,8 @@ pub mod day07;
 pub mod day08;
 pub mod day09;
 pub mod day10;
+pub mod day11;
+pub mod day12;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -39,6 +41,8 @@ fn main() {
         day09::all();
         println!("|--------------------------------|");
         day10::all();
+        println!("|--------------------------------|");
+        day11::all();
     } else {
         match &args[1]
             .parse::<usize>()
@@ -54,7 +58,9 @@ fn main() {
             8 => day08::all(),
             9 => day09::all(),
             10 => day10::all(),
-            11..=25 => aoc::print_response(0, 0, "hold ur horses!!"),
+            11 => day11::all(),
+            12 => day12::all(),
+            13..=25 => aoc::print_response(0, 0, "hold ur horses!!"),
             _ => panic!("Command line arg must be int between 1 and 25"),
         };
     }
